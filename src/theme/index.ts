@@ -60,8 +60,9 @@ const Theme = createTheme({
           '&:hover': { backgroundColor: Color.success(0.2) },
         },
         textInfo: {
-          backgroundColor: Color.info(0.1),
-          '&:hover': { backgroundColor: Color.info(0.2) },
+          // backgroundColor: Color.info(0.1),
+          backgroundColor: Color.black(0.1),
+          '&:hover': { backgroundColor: Color.black(0.2) },
         },
         textWarning: {
           backgroundColor: Color.warning(0.1),

@@ -1,16 +1,23 @@
 import { useEffect } from 'react';
 import { NavLink } from 'react-router';
+import { observer } from 'mobx-react-lite';
 import { Paper, Stack, Button, Typography } from '@mui/material';
 import { styled } from '@mui/system';
 
+import Hello, {
+  numIncrease, numDecrease,
+} from '@store/index';
 import Header from '@comp/header/index';
 import Footer from '@comp/footer/index';
+
 interface IProps {}
 
 const DPaper = styled(Paper)({});
 const DStack = styled(Stack)({});
 
 const Home = (props: IProps) => {
+  const { num } = Hello;
+
   useEffect(() => {
     return () => {};
   }, []);
@@ -26,51 +33,19 @@ const Home = (props: IProps) => {
         <Button variant="contained" color="secondary">Hello</Button>
         <Button variant="contained" color="success">Hello</Button>
         <Button variant="contained" color="info">Hello</Button>
-        <Button variant="contained" color="warning">Hello</Button>
-        <Button variant="contained" color="error">Hello</Button>
+        <Typography>Number: {num}</Typography>
+        <Button variant="contained" color="warning"
+          onClick={() => numIncrease()}>Number Increase
+        </Button>
+        <Button variant="contained" color="error"
+          onClick={() => numDecrease()}>Number Decrease
+        </Button>
         <Button variant="contained" color="black">Hello</Button>
         <Button variant="contained" disabled>Hello</Button>
       </DStack>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
-      <Typography variant="h1">Welcome to Gatcha</Typography>
       <Footer />
     </DPaper>
   );
 };
 
-export default Home;
+export default observer(Home);

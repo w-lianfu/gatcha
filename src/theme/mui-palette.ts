@@ -39,8 +39,9 @@ const MuiPalette = {
     dark: green[900], // #1B5E20FF
   },
   info: {
-    main: purple.A400, // D500F9FF
-    dark: purple.A700, // AA00FFFF
+    // main: purple.A400, // D500F9FF
+    // dark: purple.A700, // AA00FFFF
+    main: Color.black(1),
     contrastText: Color.white(1),
   },
   warning: {
