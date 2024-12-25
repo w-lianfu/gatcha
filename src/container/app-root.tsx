@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
+import { ThemeProvider } from '@mui/material/styles';
 
 import '@scss/index.scss';
-import Home from '@page/home/index';
+import Theme from '@theme/index';
+import AppRoute from './app-route';
 
 interface IProps {}
 
@@ -11,7 +13,9 @@ const AppRoot = (props: IProps) => {
   }, []);
 
   return (
-    <Home />
+    <ThemeProvider theme={Theme}>
+      <AppRoute />
+    </ThemeProvider>
   );
 };
 
