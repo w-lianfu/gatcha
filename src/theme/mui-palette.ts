@@ -21,10 +21,10 @@ declare module '@mui/material/Button' {
 
 import Color from '@tool/color';
 
-const MissPalette = {
+const MuiPalette = {
   common: {
-    black: Color.black(1),
-    white: Color.white(1),
+    black: Color.black(1), // #010101FF
+    white: Color.white(1), // #FAFAFAFF
   },
   primary: {
     main: pink.A400, // #F50057FF
@@ -49,17 +49,17 @@ const MissPalette = {
     contrastText: Color.white(1),
   },
   error: {
-    main: deepOrange.A400, // FF3D00FF
-    dark: deepOrange.A700, // DD2C00FF
+    main: deepOrange.A400, // #FF3D00FF
+    dark: deepOrange.A700, // #DD2C00FF
     contrastText: Color.white(1),
   },
   black: {
-    main: Color.black(1),
-    contrastText: Color.white(1),
+    main: Color.black(1), // #010101FF
+    contrastText: Color.white(1), // #FAFAFAFF
   },
   white: {
-    main: Color.white(1),
+    main: Color.white(1), // #FAFAFAFF
   },
 };
 
-export default MissPalette;
+export default MuiPalette;

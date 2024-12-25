@@ -1,7 +1,10 @@
 import { useEffect } from 'react';
-import { Paper, Stack, Button } from '@mui/material';
+import { NavLink } from 'react-router';
+import { Paper, Stack, Button, Typography } from '@mui/material';
 import { styled } from '@mui/system';
 
+import Header from '@comp/header/index';
+import Footer from '@comp/footer/index';
 interface IProps {}
 
 const DPaper = styled(Paper)({});
@@ -14,9 +17,12 @@ const Home = (props: IProps) => {
 
   return (
     <DPaper>
+      <Header />
       <h1>Home Page</h1>
       <DStack>
-        <Button variant="contained" color="primary">Hello</Button>
+        <NavLink to="/parties-info">
+          <Button variant="contained" color="primary">To Parties-Info</Button>
+        </NavLink>
         <Button variant="contained" color="secondary">Hello</Button>
         <Button variant="contained" color="success">Hello</Button>
         <Button variant="contained" color="info">Hello</Button>
@@ -25,23 +31,44 @@ const Home = (props: IProps) => {
         <Button variant="contained" color="black">Hello</Button>
         <Button variant="contained" disabled>Hello</Button>
       </DStack>
-      <DStack>
-        <Button variant="outlined" color="primary">Hello</Button>
-        <Button variant="outlined" color="secondary">Hello</Button>
-        <Button variant="outlined" color="success">Hello</Button>
-        <Button variant="outlined" color="info">Hello</Button>
-        <Button variant="outlined" color="warning">Hello</Button>
-        <Button variant="outlined" color="error">Hello</Button>
-        <Button variant="outlined" color="black">Hello</Button>
-      </DStack>
-      <DStack>
-        <Button color="primary">Hello</Button>
-        <Button color="secondary">Hello</Button>
-        <Button color="success">Hello</Button>
-        <Button color="info">Hello</Button>
-        <Button color="warning">Hello</Button>
-        <Button color="error">Hello</Button>
-      </DStack>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Typography variant="h1">Welcome to Gatcha</Typography>
+      <Footer />
     </DPaper>
   );
 };
