@@ -9,6 +9,7 @@ import Hello, {
 } from '@store/index';
 import Header from '@comp/header/index';
 import Footer from '@comp/footer/index';
+import Bottom from '@comp/bottom/index';
 
 interface IProps {}
 
@@ -44,6 +45,7 @@ const Home = (props: IProps) => {
         <Button variant="contained" disabled>Hello</Button>
       </DStack>
       <Footer />
+      <Bottom />
     </DPaper>
   );
 };

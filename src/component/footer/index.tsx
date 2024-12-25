@@ -12,6 +12,7 @@ const DStack = styled(Stack)({
   width: '100%',
   flexDirection: 'row',
   paddingTop: '3rem',
+  paddingBottom: '3rem',
   borderTop: `0.1rem solid ${Color.black(0.3)}`,
 });
 const DBox = styled(Box)({
