@@ -1,0 +1,19 @@
+#+TITLE: Gatcha
+#+AUTHOR: Gatcha LLC
+#+EMAIL: help@gatcha.us
+#+DATE: 2024-12-25
+#+LINK_HOME: https://www.gatcha.us/
+
+*** Setup
+
++ Start the dev server:
+
+#+BEGIN_SRC bash
+bun run dev
+#+END_SRC
+
++ Build the app for production:
+
+#+BEGIN_SRC bash
+bun run build
+#+END_SRC

@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "lib": ["DOM", "ES2020"],
+    "jsx": "react-jsx",
+    "target": "ES2020",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "useDefineForClassFields": true,
+
+    /* modules */
+    "module": "ESNext",
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "Bundler",
+    "allowImportingTsExtensions": true,
+
+    /* type checking */
+    "strict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "paths": {
+      "@/*": ["src/*"],
+      "@src/*": ["src/*"],
+      "@comp/*": ["src/component/*"],
+      "@con/*": ["src/container/*"],
+      "@core/*": ["src/core/*"],
+      "@page/*": ["src/page/*"],
+      "@scss/*": ["src/scss/*"],
+      "@service/*": ["src/service/*"],
+      "@static/*": ["src/static/*"],
+      "@image/*": ["src/static/image/*"],
+      "@icon/*": ["src/static/icon/*"],
+      "@store/*": ["src/store/*"],
+      "@styled/*": ["src/styled/*"],
+      "@theme/*": ["src/theme/*"],
+      "@tool/*": ["src/tool/*"],
+    },
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"],
+}
