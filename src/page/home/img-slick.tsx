@@ -45,7 +45,7 @@ const NextArrow = (props: any) => {
   return (
     <div className={className} onClick={onClick}
       style={{
-        ...style, display: 'flex',
+        ...style, display: 'none',
         backgroundColor: Color.error(0),
       }} />
   );
@@ -55,7 +55,7 @@ const PrevArrow = (props: any) => {
   return (
     <div className={className} onClick={onClick}
       style={{
-        ...style, display: 'flex',
+        ...style, display: 'none',
         color: Color.primary(1),
         backgroundColor: Color.secondary(0),
       }} />

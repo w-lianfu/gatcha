@@ -63,6 +63,23 @@ const PrevArrow = (props: any) => {
       }} />
   );
 };
+const ImgBox = styled.div`
+  width: 100%;
+  height: 300px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+`;
+const ImgBox1 = styled(ImgBox)({
+  backgroundImage: 'url("https://cdn.prod.website-files.com/6657d5e13962708bf80347e8/66582d5963b40e4b2bcbd08d__7IV0203.jpg")',
+});
+const ImgBox2 = styled(ImgBox)({
+  backgroundImage: 'url("https://cdn.prod.website-files.com/6657d5e13962708bf80347e8/66582e940b984d47f0630d5d__7IV0222.jpg")',
+});
+const ImgBox3 = styled(ImgBox)({
+  backgroundImage: 'url("https://cdn.prod.website-files.com/6657d5e13962708bf80347e8/66584689468a31ece37450f2_0914-7.jpg")',
+});
 
 const ItemBox = (props: IProps) => {
   const navi = useNavigate();
@@ -93,35 +110,35 @@ const ItemBox = (props: IProps) => {
     <ItemSection>
       <Slider {...itemSettings}>
         <Item>
-          <img src="https://cdn.prod.website-files.com/6657d5e13962708bf80347e8/66582d5963b40e4b2bcbd08d__7IV0203.jpg" width="100%" />
+          <ImgBox1 />
           <Desc>
             <Typography variant="h5">Clawcade</Typography>
             <Typography variant="body1">Gatcha Clawcade, we design and manufacture all of our industry leading machines in house!</Typography>
           </Desc>
         </Item>
         <Item>
-          <img src="https://cdn.prod.website-files.com/6657d5e13962708bf80347e8/66582d5963b40e4b2bcbd08d__7IV0203.jpg" width="100%" />
+          <ImgBox2 />
           <Desc>
             <Typography variant="h5">Arcade</Typography>
             <Typography variant="body1">The Arcade, we handpick our games to ensure the best experience, our skilled team makes sure everything is well maintained!</Typography>
           </Desc>
         </Item>
         <Item>
-          <img src="https://cdn.prod.website-files.com/6657d5e13962708bf80347e8/66582d5963b40e4b2bcbd08d__7IV0203.jpg" width="100%" />
+          <ImgBox3 />
           <Desc>
             <Typography variant="h5">Gatcha Shop</Typography>
             <Typography variant="body1">Explore our shop! Where everything is available for trade-in. Ft. Giant Plush, Gundams, Anime Figures, and tons of Blind Boxes!</Typography>
           </Desc>
         </Item>
         <Item>
-          <img src="https://cdn.prod.website-files.com/6657d5e13962708bf80347e8/66582d5963b40e4b2bcbd08d__7IV0203.jpg" width="100%" />
+          <ImgBox2 />
           <Desc>
             <Typography variant="h5">Mock 111</Typography>
             <Typography variant="body1">Mock 111 Mock 111 Mock 111</Typography>
           </Desc>
         </Item>
         <Item>
-          <img src="https://cdn.prod.website-files.com/6657d5e13962708bf80347e8/66582d5963b40e4b2bcbd08d__7IV0203.jpg" width="100%" />
+          <ImgBox3 />
           <Desc>
             <Typography variant="h5">Mock 222</Typography>
             <Typography variant="body1">Mock 222 Mock 222 Mock 222</Typography>

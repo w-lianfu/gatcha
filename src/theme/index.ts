@@ -26,6 +26,7 @@ const Theme = createTheme({
           '& .MuiBox-root': {
             display: 'flex',
             flexWrap: 'wrap',
+            boxSizing: 'border-box',
           },
         },
       },
@@ -33,7 +34,9 @@ const Theme = createTheme({
     MuiStack: {
       defaultProps: { component: 'section' },
       styleOverrides: {
-        root: { position: 'relative' },
+        root: {
+          position: 'relative',
+        },
       },
     },
     MuiButton: {

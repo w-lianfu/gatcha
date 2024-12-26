@@ -1,14 +1,16 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router';
-import {
-  Stack, Box, Button, ButtonBase, Typography,
-} from '@mui/material';
+import { observer } from 'mobx-react-lite';
+import { Stack, Box, Button, Typography } from '@mui/material';
 import { styled } from '@mui/system';
-import { MdMenu } from 'react-icons/md';
+import { MdMenu, MdArrowDownward } from 'react-icons/md';
 
 import Color from '@tool/color';
 import Size from '@tool/size';
+import moHome, { toggleParties, toggleLocation } from '@store/home';
 import GatchaLogo from '@icon/gatcha-logo.png';
+import PartiesBox from './parties-box';
+import LocationBox from './location-box';
 
 interface IProps {}
 
@@ -22,7 +24,7 @@ const WideStack = styled(Stack)({
   alignItems: 'center',
   zIndex: 50,
   borderBottom: `0.1rem solid ${Color.black(0.1)}`,
-  backgroundColor: Color.white(0.85),
+  backgroundColor: Color.white(0.9),
 });
 const DStack = styled(Stack)({
   width: '100%',
@@ -43,6 +45,11 @@ const EBox = styled(DBox)({
 });
 const DButton = styled(Button)({
   padding: '0 3rem',
+
+  '& .MuiButton-endIcon': {
+    marginLeft: '0.2rem',
+    marginTop: '0.2rem',
+  },
 });
 const FButton = styled(Button)({
   padding: '0 2rem',
@@ -55,36 +62,47 @@ const DTypography = styled(Typography)({
 
 const Header = (props: IProps) => {
   const navi = useNavigate();
+  const { partiesShow, locationShow } = moHome;
 
   useEffect(() => {
     return () => {};
   }, []);
 
-  const toHome = () => {
-    navi('/');
+  const hiddenBox = () => {
+    toggleParties(true);
+    toggleLocation(true);
   };
 
   return (
     <WideStack>
-      <DStack direction="row">
+      <DStack direction="row" onMouseEnter={() => hiddenBox()}>
         <EBox>
           <img src={GatchaLogo} width='180px' onClick={() => navi('/')} />
         </EBox>
         <DBox>
-          <DButton color="info">What&apos;s New</DButton>
-          <DButton color="info">Studio</DButton>
-          <DButton color="info">Parties</DButton>
-          <DButton color="info">Location/Pricing</DButton>
+          <DButton color="info" onMouseEnter={() => hiddenBox()}>What&apos;s New</DButton>
+          <DButton color="info" onMouseEnter={() => hiddenBox()}>Studio</DButton>
+          <DButton color="info" endIcon={<MdArrowDownward />} onMouseEnter={() => {
+            toggleParties(false);
+            toggleLocation(true);
+          }}>Parties</DButton>
+          <DButton color="info" endIcon={<MdArrowDownward />} onMouseEnter={() => {
+            toggleLocation(false);
+            toggleParties(true);
+          }}>Location/Pricing</DButton>
         </DBox>
-        <DBox>
+        <DBox onMouseEnter={() => toggleLocation(true)}>
           <FButton color="secondary">
             <MdMenu />
             <DTypography variant="body1">Menu</DTypography>
           </FButton>
         </DBox>
       </DStack>
+
+      {partiesShow ? <PartiesBox /> : null}
+      {locationShow ? <LocationBox /> : null}
     </WideStack>
   );
 };
 
-export default Header;
+export default observer(Header);
