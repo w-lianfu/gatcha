@@ -4,6 +4,7 @@ import { Stack, Box, Typography, IconButton } from '@mui/material';
 import { styled } from '@mui/system';
 
 import Color from '@tool/color';
+import Size from '@tool/size';
 import { LinkButton } from '@styled/index';
 import RedbookLogo from '@icon/redbook.svg';
 import InstagramLogo from '@icon/instagram.svg';
@@ -11,13 +12,19 @@ import LinkedinLogo from '@icon/linkedin.svg';
 
 interface IProps {}
 
-const DStack = styled(Stack)({
+const WideStack = styled(Stack)({
   width: '100%',
   height: '5rem',
+  alignItems: 'center',
+  borderTop: `0.1rem solid ${Color.black(0.1)}`,
+});
+const DStack = styled(Stack)({
+  width: '100%',
+  height: '100%',
+  maxWidth: Size.maxWidth,
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'space-between',
-  // borderTop: `0.1rem solid ${Color.black(0.1)}`,
 });
 const DBox = styled(Box)({
   flex: 1,
@@ -49,24 +56,26 @@ const Bottom = (props: IProps) => {
   };
 
   return (
-    <DStack>
-      <DBox>
-        <DIconButton onClick={() => onLink('redbook')}>
-          <img src={RedbookLogo} width="26px" />
-        </DIconButton>
-        <DIconButton onClick={() => onLink('instagram') }>
-          <img src={InstagramLogo} width="26px" />
-        </DIconButton>
-        <DIconButton onClick={() => onLink('linkedin')}>
-          <img src={LinkedinLogo} width="26px" />
-        </DIconButton>
-      </DBox>
-      <EBox>
-        <NavLink to="/">
-          <LinkButton>DESIGNED BY GATCHA LLC. ALL RIGHTS RESERVED</LinkButton>
-        </NavLink>
-      </EBox>
-    </DStack>
+    <WideStack>
+      <DStack>
+        <DBox>
+          <DIconButton onClick={() => onLink('redbook')}>
+            <img src={RedbookLogo} width="26px" />
+          </DIconButton>
+          <DIconButton onClick={() => onLink('instagram') }>
+            <img src={InstagramLogo} width="26px" />
+          </DIconButton>
+          <DIconButton onClick={() => onLink('linkedin')}>
+            <img src={LinkedinLogo} width="26px" />
+          </DIconButton>
+        </DBox>
+        <EBox>
+          <NavLink to="/">
+            <LinkButton>DESIGNED BY GATCHA LLC. ALL RIGHTS RESERVED</LinkButton>
+          </NavLink>
+        </EBox>
+      </DStack>
+    </WideStack>
   );
 };
 

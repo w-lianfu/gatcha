@@ -9,18 +9,25 @@ import GatchaLogo from '@icon/gatcha-logo.png';
 
 interface IProps {}
 
-const DStack = styled(Stack)({
+const WideStack = styled(Stack)({
   position: 'absolute',
   top: 0,
   left: 0,
   width: '100%',
   height: `${Size.header}rem`,
+  justifyContent: 'center',
+  alignItems: 'center',
+  zIndex: 50,
+  borderBottom: `0.1rem solid ${Color.black(0.1)}`,
+  backgroundColor: Color.white(0.85),
+});
+const DStack = styled(Stack)({
+  width: '100%',
+  height: '100%',
+  maxWidth: Size.maxWidth,
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  borderBottom: `0.1rem solid ${Color.black(0.1)}`,
-  backgroundColor: Color.white(0.85),
-  zIndex: 50,
 });
 const DBox = styled(Box)({
   height: '100%',
@@ -47,21 +54,23 @@ const Header = (props: IProps) => {
   }, []);
 
   return (
-    <DStack direction="row">
-      <EBox><img src={GatchaLogo} width='180px' /></EBox>
-      <DBox>
-        <DButton color="info">What&apos;s New</DButton>
-        <DButton color="info">Studio</DButton>
-        <DButton color="info">Parties</DButton>
-        <DButton color="info">Location/Pricing</DButton>
-      </DBox>
-      <DBox>
-        <FButton color="secondary">
-          <MdMenu />
-          <DTypography variant="body1">Menu</DTypography>
-        </FButton>
-      </DBox>
-    </DStack>
+    <WideStack>
+      <DStack direction="row">
+        <EBox><img src={GatchaLogo} width='180px' /></EBox>
+        <DBox>
+          <DButton color="info">What&apos;s New</DButton>
+          <DButton color="info">Studio</DButton>
+          <DButton color="info">Parties</DButton>
+          <DButton color="info">Location/Pricing</DButton>
+        </DBox>
+        <DBox>
+          <FButton color="secondary">
+            <MdMenu />
+            <DTypography variant="body1">Menu</DTypography>
+          </FButton>
+        </DBox>
+      </DStack>
+    </WideStack>
   );
 };
 
