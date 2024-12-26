@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router';
-import { Paper } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 // import { styled } from '@mui/material/styles';
 import styled from 'styled-components';
 import Slider from 'react-slick';
@@ -13,6 +13,7 @@ import Color from '@tool/color';
 interface IProps {}
 
 const ImgBox = styled.div`
+  position: relative;
   height: 800px;
   width: 100%;
   cursor: pointer;
@@ -21,12 +22,15 @@ const ImgBox = styled.div`
   background-position: center;
 `;
 const ImgBox1 = styled(ImgBox)`
-  background-image: url("https://cdn.prod.website-files.com/6657d5e13962708bf80347e8/66584689468a31ece37450f2_0914-7.jpg");
-`;
-const ImgBox2 = styled(ImgBox)`
   background-image: url("https://cdn.prod.website-files.com/6657d5e13962708bf80347e8/66582e940b984d47f0630d5d__7IV0222.jpg");
 `;
+const ImgBox2 = styled(ImgBox)`
+  background-image: url("https://cdn.prod.website-files.com/6657d5e13962708bf80347e8/6657fe2fb0ed2035fbfb2734__7IV0226-2.jpg");
+`;
 const ImgBox3 = styled(ImgBox)`
+  background-image: url("https://cdn.prod.website-files.com/6657d5e13962708bf80347e8%2F665849eef9b93b79aa3000e0_Or-poster-00001.jpg");
+`;
+const ImgBox4 = styled(ImgBox)`
   background-image: url("https://cdn.prod.website-files.com/6657d5e13962708bf80347e8/66582d5963b40e4b2bcbd08d__7IV0203.jpg");
 `;
 const SlickBox = styled.div`
@@ -58,6 +62,21 @@ const PrevArrow = (props: any) => {
   );
 };
 
+const DBox = styled(Box)({
+  position: 'absolute',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: '100%',
+  left: 0,
+  bottom: '150px',
+  zIndex: 50,
+  paddingBottom: '1rem',
+  color: Color.white(1),
+  backgroundColor: Color.black(0.6),
+});
+
 const ImgSlick = (props: IProps) => {
   const navi = useNavigate();
   const slickSettings = {
@@ -88,9 +107,30 @@ const ImgSlick = (props: IProps) => {
   return (
     <SlickBox>
       <Slider {...slickSettings}>
-        <ImgBox1 onClick={() => navi('/tangram')} />
-        <ImgBox2 onClick={() => navi('/tangram')} />
-        <ImgBox3 onClick={() => navi('/tangram')} />
+        <ImgBox1 onClick={() => navi('/tangram')}>
+          <DBox>
+            <Typography variant="h5">Flushing NY</Typography>
+            <Typography variant="body1">Clawcade, Arcade, Cocktail Bar, Gatcha Shop</Typography>
+          </DBox>
+        </ImgBox1>
+        <ImgBox2 onClick={() => navi('/saugus-ma')}>
+          <DBox>
+            <Typography variant="h5">Orlando FL</Typography>
+            <Typography variant="body1">Clawcade, Arcade, Cocktail Bar, Gatcha Shop</Typography>
+          </DBox>
+        </ImgBox2>
+        <ImgBox3 onClick={() => navi('/orlando-fl')}>
+          <DBox>
+            <Typography variant="h5">Saugus MA</Typography>
+            <Typography variant="body1">Clawcade, Arcade, Cocktail Bar, Gatcha Shop</Typography>
+          </DBox>
+        </ImgBox3>
+        <ImgBox4 onClick={() => navi('/edison-nj')}>
+          <DBox>
+            <Typography variant="h5">Edison NJ</Typography>
+            <Typography variant="body1">Clawcade, Arcade, Cocktail Bar, Gatcha Shop</Typography>
+          </DBox>
+        </ImgBox4>
       </Slider>
     </SlickBox>
   );

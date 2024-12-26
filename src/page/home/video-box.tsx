@@ -30,7 +30,7 @@ const VideoBox = (props: IProps) => {
   return (
     <DStack>
       <ReactPlayer url="https://cdn.prod.website-files.com/6657d5e13962708bf80347e8%2F66582388539124f6d1784c1d_64f8532eb953222f9c0ec6e4_Untitled-transcode.mp4"
-        playing={true} loop={true} controls={true} width="1000px" height="500px" />
+        playing={true} loop={true} controls={true} width="1180px" height="600px" />
     </DStack>
   );
 };
