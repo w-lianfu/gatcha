@@ -10,17 +10,25 @@ import Header from '@comp/header/index';
 import Footer from '@comp/footer/index';
 import Bottom from '@comp/bottom/index';
 import ImgSlick from './img-slick';
+import VideoBox from './video-box';
+import ItemBox from './item-box';
 
 interface IProps {}
 
 const DPaper = styled(Paper)({
   width: '100%',
+  minWidth: '1200px',
   alignItems: 'center',
   overflowX: 'hidden',
 });
 const EPaper = styled(Paper)({
   width: '100%',
   maxWidth: Size.maxWidth,
+});
+const FPaper = styled(Paper)({
+  width: '100%',
+  top: '-150px',
+  // zIndex: 50,
 });
 const DStack = styled(Stack)({});
 
@@ -36,24 +44,27 @@ const Home = (props: IProps) => {
       <Header />
       <EPaper>
         <ImgSlick />
-        <h1>Home Page</h1>
-        <DStack>
-          <NavLink to="/parties-info">
-            <Button variant="contained" color="primary">To Parties-Info</Button>
-          </NavLink>
-          <Button variant="contained" color="secondary">Hello</Button>
-          <Button variant="contained" color="success">Hello</Button>
-          <Button variant="contained" color="info">Hello</Button>
-          <Typography>Number: {num}</Typography>
-          <Button variant="contained" color="warning"
-            onClick={() => numIncrease()}>Number Increase
-          </Button>
-          <Button variant="contained" color="error"
-            onClick={() => numDecrease()}>Number Decrease
-          </Button>
-          <Button variant="contained" color="black">Hello</Button>
-          <Button variant="contained" disabled>Hello</Button>
-        </DStack>
+        <VideoBox />
+        <FPaper>
+          <ItemBox />
+          <DStack>
+            <NavLink to="/parties-info">
+              <Button variant="contained" color="primary">To Parties-Info</Button>
+            </NavLink>
+            <Button variant="contained" color="secondary">Hello</Button>
+            <Button variant="contained" color="success">Hello</Button>
+            <Button variant="contained" color="info">Hello</Button>
+            <Typography>Number: {num}</Typography>
+            <Button variant="contained" color="warning"
+              onClick={() => numIncrease()}>Number Increase
+            </Button>
+            <Button variant="contained" color="error"
+              onClick={() => numDecrease()}>Number Decrease
+            </Button>
+            <Button variant="contained" color="black">Hello</Button>
+            <Button variant="contained" disabled>Hello</Button>
+          </DStack>
+        </FPaper>
       </EPaper>
       <Footer />
       <Bottom />

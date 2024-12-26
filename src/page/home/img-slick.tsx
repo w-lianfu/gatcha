@@ -42,7 +42,7 @@ const NextArrow = (props: any) => {
     <div className={className} onClick={onClick}
       style={{
         ...style, display: 'flex',
-        backgroundColor: Color.error(1),
+        backgroundColor: Color.error(0),
       }} />
   );
 };
@@ -52,7 +52,8 @@ const PrevArrow = (props: any) => {
     <div className={className} onClick={onClick}
       style={{
         ...style, display: 'flex',
-        backgroundColor: Color.secondary(1),
+        color: Color.primary(1),
+        backgroundColor: Color.secondary(0),
       }} />
   );
 };
