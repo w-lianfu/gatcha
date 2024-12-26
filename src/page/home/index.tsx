@@ -9,6 +9,7 @@ import Hello, { numIncrease, numDecrease } from '@store/index';
 import Header from '@comp/header/index';
 import Footer from '@comp/footer/index';
 import Bottom from '@comp/bottom/index';
+import Slick from './slick';
 
 interface IProps {}
 
@@ -33,6 +34,7 @@ const Home = (props: IProps) => {
     <DPaper>
       <Header />
       <EPaper>
+        <Slick />
         <h1>Home Page</h1>
         <DStack>
           <NavLink to="/parties-info">

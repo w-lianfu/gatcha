@@ -82,7 +82,7 @@ export default [
       // https://eslint.org/docs/latest/rules/no-plusplus
       'no-plusplus': 'error',
       // https://eslint.org/docs/latest/rules/max-len
-      'max-len': ['error', { code: 100 }],
+      // 'max-len': ['error', { code: 100 }],
       // https://eslint.org/docs/latest/rules/no-unused-vars
       // 'no-unused-vars': 'error',
       // https://github.com/airbnb/javascript?tab=readme-ov-file#no-use-before-define

@@ -1,5 +1,8 @@
 import { useEffect } from 'react';
-import { Stack, Box, Button, Typography } from '@mui/material';
+import { useNavigate } from 'react-router';
+import {
+  Stack, Box, Button, ButtonBase, Typography,
+} from '@mui/material';
 import { styled } from '@mui/system';
 import { MdMenu } from 'react-icons/md';
 
@@ -35,6 +38,8 @@ const DBox = styled(Box)({
 const EBox = styled(DBox)({
   marginLeft: '2rem',
   alignItems: 'center',
+
+  '& img': { cursor: 'pointer' },
 });
 const DButton = styled(Button)({
   padding: '0 3rem',
@@ -49,14 +54,22 @@ const DTypography = styled(Typography)({
 });
 
 const Header = (props: IProps) => {
+  const navi = useNavigate();
+
   useEffect(() => {
     return () => {};
   }, []);
 
+  const toHome = () => {
+    navi('/');
+  };
+
   return (
     <WideStack>
       <DStack direction="row">
-        <EBox><img src={GatchaLogo} width='180px' /></EBox>
+        <EBox>
+          <img src={GatchaLogo} width='180px' onClick={() => navi('/')} />
+        </EBox>
         <DBox>
           <DButton color="info">What&apos;s New</DButton>
           <DButton color="info">Studio</DButton>

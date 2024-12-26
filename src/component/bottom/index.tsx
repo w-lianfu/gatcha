@@ -39,6 +39,9 @@ const DIconButton = styled(IconButton)({
   width: '5rem',
   marginRight: '2rem',
 });
+const DLinkButton = styled(LinkButton)({
+  fontSize: '1.2rem',
+});
 
 const Bottom = (props: IProps) => {
   useEffect(() => {
@@ -71,7 +74,7 @@ const Bottom = (props: IProps) => {
         </DBox>
         <EBox>
           <NavLink to="/">
-            <LinkButton>DESIGNED BY GATCHA LLC. ALL RIGHTS RESERVED</LinkButton>
+            <DLinkButton>DESIGNED BY GATCHA LLC. ALL RIGHTS RESERVED</DLinkButton>
           </NavLink>
         </EBox>
       </DStack>
