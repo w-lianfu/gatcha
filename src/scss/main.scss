@@ -30,6 +30,8 @@ body {
 #root {
   position: relative;
   display: grid;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 ::selection {

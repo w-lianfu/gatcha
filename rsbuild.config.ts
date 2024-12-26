@@ -13,6 +13,7 @@ export default defineConfig({
       '@comp': './src/component',
       '@con': './src/container',
       '@core': './src/core',
+      '@lib': './src/lib',
       '@page': './src/page',
       '@scss': './src/scss',
       '@service': './src/service',

@@ -9,13 +9,14 @@ import Hello, { numIncrease, numDecrease } from '@store/index';
 import Header from '@comp/header/index';
 import Footer from '@comp/footer/index';
 import Bottom from '@comp/bottom/index';
-import Slick from './slick';
+import ImgSlick from './img-slick';
 
 interface IProps {}
 
 const DPaper = styled(Paper)({
   width: '100%',
   alignItems: 'center',
+  overflowX: 'hidden',
 });
 const EPaper = styled(Paper)({
   width: '100%',
@@ -34,7 +35,7 @@ const Home = (props: IProps) => {
     <DPaper>
       <Header />
       <EPaper>
-        <Slick />
+        <ImgSlick />
         <h1>Home Page</h1>
         <DStack>
           <NavLink to="/parties-info">
