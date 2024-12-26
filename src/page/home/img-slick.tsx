@@ -1,19 +1,21 @@
 import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router';
 import { Paper } from '@mui/material';
 // import { styled } from '@mui/material/styles';
 import styled from 'styled-components';
-import { Carousel } from 'antd';
 import Slider from 'react-slick';
-import { Swiper, SwiperSlide } from 'swiper/react';
+// import { MdArrowBackIosNew, MdArrowForwardIos } from 'react-icons/md';
 
 import '@lib/react-slick/slick.scss';
 import '@lib/react-slick/slick-theme.scss';
+import Color from '@tool/color';
 
 interface IProps {}
 
 const ImgBox = styled.div`
   height: 800px;
   width: 100%;
+  cursor: pointer;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -27,14 +29,55 @@ const ImgBox2 = styled(ImgBox)`
 const ImgBox3 = styled(ImgBox)`
   background-image: url("https://cdn.prod.website-files.com/6657d5e13962708bf80347e8/66582d5963b40e4b2bcbd08d__7IV0203.jpg");
 `;
+const SlickBox = styled.div`
+  position: relative;
+  width: 100%;
+  height: 800px;
+  overflow: hidden;
+`;
+
+const NextArrow = (props: any) => {
+  const { className, style, onClick } = props;
+  return (
+    <div className={className} onClick={onClick}
+      style={{
+        ...style, display: 'flex',
+        backgroundColor: Color.error(1),
+      }} />
+  );
+};
+const PrevArrow = (props: any) => {
+  const { className, style, onClick } = props;
+  return (
+    <div className={className} onClick={onClick}
+      style={{
+        ...style, display: 'flex',
+        backgroundColor: Color.secondary(1),
+      }} />
+  );
+};
 
 const ImgSlick = (props: IProps) => {
-  const settings = {
+  const navi = useNavigate();
+  const slickSettings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 1000,
+    autoplaySpeed: 3000,
     slidesToShow: 1,
     slidesToScroll: 1,
+    // autoplay: true,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
+    dotsClass: 'slick-dots custom-dots',
+    appendDots: (dots: any) => (
+      <section>
+        <ul className="custom-dot">{dots}</ul>
+      </section>
+    ),
+    customPaging: (i: number) => (
+      <i className="little-dot" />
+    ),
   };
 
   useEffect(() => {
@@ -42,18 +85,13 @@ const ImgSlick = (props: IProps) => {
   }, []);
 
   return (
-    <section style={{
-      position: 'relative',
-      width: '100%',
-      height: '800px',
-      overflow: 'hidden',
-    }}>
-      <Slider {...settings}>
-        <ImgBox1 />
-        <ImgBox2 />
-        <ImgBox3 />
+    <SlickBox>
+      <Slider {...slickSettings}>
+        <ImgBox1 onClick={() => navi('/tangram')} />
+        <ImgBox2 onClick={() => navi('/tangram')} />
+        <ImgBox3 onClick={() => navi('/tangram')} />
       </Slider>
-    </section>
+    </SlickBox>
   );
 };
 
