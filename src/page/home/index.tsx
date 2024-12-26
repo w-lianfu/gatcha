@@ -4,6 +4,8 @@ import { observer } from 'mobx-react-lite';
 import { Paper, Stack, Button, Typography } from '@mui/material';
 import { styled } from '@mui/system';
 
+import '@lib/react-slick/slick.scss';
+import '@lib/react-slick/slick-theme.scss';
 import Size from '@tool/size';
 import Hello, { numIncrease, numDecrease } from '@store/index';
 import Header from '@comp/header/index';
@@ -28,6 +30,10 @@ const EPaper = styled(Paper)({
 const FPaper = styled(Paper)({
   width: '100%',
   top: '-150px',
+  marginBottom: '-120px',
+  overflow: 'hidden',
+  justifyContent: 'center',
+  alignItems: 'center',
   // zIndex: 50,
 });
 const DStack = styled(Stack)({});
