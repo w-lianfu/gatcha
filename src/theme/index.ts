@@ -77,6 +77,33 @@ const Theme = createTheme({
         },
       },
     },
+    MuiSpeedDial: {
+      styleOverrides: {
+        root: {
+          position: 'relative',
+          width: '5.6rem',
+
+          '& .MuiSpeedDial-actions': {
+            marginBottom: 0,
+            paddingBottom: '1.2rem',
+          },
+          '& .MuiSpeedDial-fab': {
+            position: 'relative',
+            width: '5.6rem',
+            height: '5.6rem',
+          },
+          '& .MuiSpeedDialAction-fab': {
+            position: 'relative',
+            width: '4.6rem',
+            height: '4.6rem',
+            margin: '0.8rem',
+            fontSize: '2rem',
+            color: Color.primary(1),
+            backgroundColor: Color.white(1),
+          },
+        },
+      },
+    },
   },
 });
 

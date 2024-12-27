@@ -5,6 +5,7 @@ import { Paper, Stack, Box, Button, Typography } from '@mui/material';
 import { styled } from '@mui/system';
 
 import Color from '@tool/color';
+import AppDial from '@con/app-dial';
 
 interface IProps {}
 
@@ -23,7 +24,79 @@ const Stores = (props: IProps) => {
   return (
     <DPaper>
       <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
       <Button onClick={() => navi('/')}>to Home</Button>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <Typography variant="h1">Stores Page, {storeName}</Typography>
+      <AppDial />
     </DPaper>
   );
 };

@@ -7,7 +7,7 @@ import { styled } from '@mui/system';
 import '@lib/react-slick/slick.scss';
 import '@lib/react-slick/slick-theme.scss';
 import Size from '@tool/size';
-import Hello, { numIncrease, numDecrease } from '@store/index';
+import AppDial from '@con/app-dial';
 import Header from '@comp/header/index';
 import Footer from '@comp/footer/index';
 import Bottom from '@comp/bottom/index';
@@ -40,8 +40,6 @@ const FPaper = styled(Paper)({
 const DStack = styled(Stack)({});
 
 const Home = (props: IProps) => {
-  const { num } = Hello;
-
   useEffect(() => {
     return () => {};
   }, []);
