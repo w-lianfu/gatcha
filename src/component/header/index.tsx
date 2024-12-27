@@ -45,11 +45,15 @@ const EBox = styled(DBox)({
 });
 const DButton = styled(Button)({
   padding: '0 3rem',
+  borderRight: `1px solid ${Color.white(1)}`,
+  backgroundColor: Color.black(0.15),
 
   '& .MuiButton-endIcon': {
     marginLeft: '0.2rem',
     marginTop: '0.2rem',
   },
+  '&:hover': { backgroundColor: Color.black(0.15) },
+  '&.active': { backgroundColor: Color.black(0.25) },
 });
 const FButton = styled(Button)({
   padding: '0 2rem',
@@ -68,30 +72,34 @@ const Header = (props: IProps) => {
     return () => {};
   }, []);
 
-  const hiddenBox = () => {
-    toggleParties(true);
-    toggleLocation(true);
+  const hiddenBox = (isParties: boolean, isLocation: boolean) => {
+    toggleParties(isParties);
+    toggleLocation(isLocation);
   };
 
   return (
     <WideStack>
-      <DStack direction="row" onMouseEnter={() => hiddenBox()}>
-        <EBox>
-          <img src={GatchaLogo} width='180px' onClick={() => navi('/')} />
-        </EBox>
+      <DStack direction="row">
+        <EBox><img src={GatchaLogo} width='180px' onClick={() => navi('/')} /></EBox>
         <DBox>
-          <DButton color="info" onMouseEnter={() => hiddenBox()}>What&apos;s New</DButton>
-          <DButton color="info" onMouseEnter={() => hiddenBox()}>Studio</DButton>
-          <DButton color="info" endIcon={<MdArrowDownward />} onMouseEnter={() => {
-            toggleParties(false);
-            toggleLocation(true);
-          }}>Parties</DButton>
-          <DButton color="info" endIcon={<MdArrowDownward />} onMouseEnter={() => {
-            toggleLocation(false);
-            toggleParties(true);
-          }}>Location/Pricing</DButton>
+          <DButton color="info"
+            onMouseEnter={() => hiddenBox(true, true)}>What&apos;s New
+          </DButton>
+          <DButton color="info"
+            onMouseEnter={() => hiddenBox(true, true)}>Studio
+          </DButton>
+          <DButton color="info" endIcon={<MdArrowDownward />}
+            onMouseEnter={() => hiddenBox(false, true)}
+            onMouseLeave={() => toggleLocation(true)}
+            className={[partiesShow ? 'active' : ''].join(',')}>Parties
+          </DButton>
+          <DButton color="info" endIcon={<MdArrowDownward />}
+            onMouseEnter={() => hiddenBox(true, false)}
+            onMouseLeave={() => toggleLocation(true)}
+            className={[locationShow ? 'active' : ''].join(',')}>Location/Pricing
+          </DButton>
         </DBox>
-        <DBox onMouseEnter={() => toggleLocation(true)}>
+        <DBox>
           <FButton color="secondary">
             <MdMenu />
             <DTypography variant="body1">Menu</DTypography>

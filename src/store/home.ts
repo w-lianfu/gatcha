@@ -10,7 +10,6 @@ const toggleParties = action((isShow: boolean) => {
 });
 
 const toggleLocation = action((isShow: boolean) => {
-  console.log('toggle location -- ', isShow);
   moHome.locationShow = !isShow;
 });
 

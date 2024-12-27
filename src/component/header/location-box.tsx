@@ -15,13 +15,21 @@ const DPaper = styled(Paper)({
   width: '100%',
   paddingTop: '3rem',
   display: 'flex',
-  flexWrap: 'wrap',
-  paddingLeft: '2rem',
+  justifyContent: 'center',
+  alignItems: 'center',
   paddingBottom: '3rem',
-  boxSizing: 'border-box',
   zIndex: 55,
   backgroundColor: Color.white(0.9),
   borderBottom: `0.1rem solid ${Color.black(0.1)}`,
+});
+const EPaper = styled(Paper)({
+  width: '100%',
+  maxWidth: '1920px',
+  display: 'flex',
+  flexWrap: 'wrap',
+  padding: '0 3rem',
+  boxSizing: 'border-box',
+  backgroundColor: Color.white(0),
 });
 const DStack = styled(Stack)({});
 
@@ -33,16 +41,19 @@ const LocationBox = (props: IProps) => {
   }, []);
 
   return (
-    <DPaper onMouseLeave={() => toggleLocation(true)}>
-      <DStack>
-        <Typography variant="h5">Locations</Typography>
-        <Typography variant="body1">Hello</Typography>
-      </DStack>
+    <DPaper onMouseEnter={() => toggleLocation(false)}
+      onMouseLeave={() => toggleLocation(true)}>
+      <EPaper>
+        <DStack>
+          <Typography variant="h5">Locations</Typography>
+          <Typography variant="body1">Hello</Typography>
+        </DStack>
 
-      <DStack>
-        <Typography variant="h5">Pricing</Typography>
-        <Typography variant="body1">Hello</Typography>
-      </DStack>
+        <DStack>
+          <Typography variant="h5">Pricing</Typography>
+          <Typography variant="body1">Hello</Typography>
+        </DStack>
+      </EPaper>
     </DPaper>
   );
 };
