@@ -7,10 +7,13 @@ import { MdMenu, MdArrowDownward } from 'react-icons/md';
 
 import Color from '@tool/color';
 import Size from '@tool/size';
-import moHome, { toggleParties, toggleLocation } from '@store/home';
+import moHeader, {
+  toggleParties, toggleLocation, toggleMenu,
+} from '@store/header';
 import GatchaLogo from '@icon/gatcha-logo.png';
 import PartiesBox from './parties-box';
 import LocationBox from './location-box';
+import MenuBox from './menu-box';
 
 interface IProps {}
 
@@ -66,7 +69,7 @@ const DTypography = styled(Typography)({
 
 const Header = (props: IProps) => {
   const navi = useNavigate();
-  const { partiesShow, locationShow } = moHome;
+  const { partiesShow, locationShow, menuShow } = moHeader;
 
   useEffect(() => {
     return () => {};
@@ -83,23 +86,24 @@ const Header = (props: IProps) => {
         <EBox><img src={GatchaLogo} width='180px' onClick={() => navi('/')} /></EBox>
         <DBox>
           <DButton color="info"
-            onMouseEnter={() => hiddenBox(true, true)}>What&apos;s New
+            onMouseEnter={() => hiddenBox(false, false)}>What&apos;s New
           </DButton>
           <DButton color="info"
-            onMouseEnter={() => hiddenBox(true, true)}>Studio
-          </DButton>
-          <DButton color="info" endIcon={<MdArrowDownward />}
-            onMouseEnter={() => hiddenBox(false, true)}
-            onMouseLeave={() => toggleLocation(true)}
-            className={[partiesShow ? 'active' : ''].join(',')}>Parties
+            onMouseEnter={() => hiddenBox(false, false)}>Studio
           </DButton>
           <DButton color="info" endIcon={<MdArrowDownward />}
             onMouseEnter={() => hiddenBox(true, false)}
-            onMouseLeave={() => toggleLocation(true)}
+            onMouseLeave={() => toggleParties(false)}
+            className={[partiesShow ? 'active' : ''].join(',')}>Parties
+          </DButton>
+          <DButton color="info" endIcon={<MdArrowDownward />}
+            onMouseEnter={() => hiddenBox(false, true)}
+            onMouseLeave={() => toggleLocation(false)}
             className={[locationShow ? 'active' : ''].join(',')}>Location/Pricing
           </DButton>
         </DBox>
-        <DBox>
+        <DBox onMouseEnter={() => toggleMenu(true)}
+          onMouseLeave={() => toggleMenu(false)}>
           <FButton color="secondary">
             <MdMenu />
             <DTypography variant="body1">Menu</DTypography>
@@ -109,6 +113,7 @@ const Header = (props: IProps) => {
 
       {partiesShow ? <PartiesBox /> : null}
       {locationShow ? <LocationBox /> : null}
+      {menuShow ? <MenuBox /> : null}
     </WideStack>
   );
 };

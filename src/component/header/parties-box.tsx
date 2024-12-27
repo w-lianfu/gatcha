@@ -5,7 +5,7 @@ import { Paper, Stack, Box, Button, Typography } from '@mui/material';
 import { styled } from '@mui/system';
 
 import Color from '@tool/color';
-import { toggleParties } from '@store/home';
+import { toggleParties } from '@store/header';
 
 interface IProps {}
 
@@ -51,8 +51,8 @@ const PartiesBox = (props: IProps) => {
   }, []);
 
   return (
-    <Parties onMouseEnter={() => toggleParties(false)}
-      onMouseLeave={() => toggleParties(true)}>
+    <Parties onMouseEnter={() => toggleParties(true)}
+      onMouseLeave={() => toggleParties(false)}>
       <ListBox>
         <PartyBox>
           <Typography>About Parties</Typography>

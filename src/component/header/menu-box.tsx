@@ -5,7 +5,7 @@ import { Paper, Stack, Box, Button, Typography } from '@mui/material';
 import { styled } from '@mui/system';
 
 import Color from '@tool/color';
-import { toggleLocation } from '@store/header';
+import moHeader, { toggleMenu } from '@store/header';
 
 interface IProps {}
 
@@ -26,6 +26,7 @@ const EPaper = styled(Paper)({
   width: '100%',
   maxWidth: '1920px',
   display: 'flex',
+  alignItems: 'flex-end',
   flexWrap: 'wrap',
   padding: '0 3rem',
   boxSizing: 'border-box',
@@ -33,7 +34,7 @@ const EPaper = styled(Paper)({
 });
 const DStack = styled(Stack)({});
 
-const LocationBox = (props: IProps) => {
+const MenuBox = (props: IProps) => {
   const navi = useNavigate();
 
   useEffect(() => {
@@ -41,21 +42,17 @@ const LocationBox = (props: IProps) => {
   }, []);
 
   return (
-    <DPaper onMouseEnter={() => toggleLocation(true)}
-      onMouseLeave={() => toggleLocation(false)}>
+    <DPaper onMouseEnter={() => toggleMenu(true)}
+      onMouseLeave={() => toggleMenu(false)}>
       <EPaper>
         <DStack>
-          <Typography variant="h5">Locations</Typography>
-          <Typography variant="body1">Hello</Typography>
-        </DStack>
-
-        <DStack>
-          <Typography variant="h5">Pricing</Typography>
-          <Typography variant="body1">Hello</Typography>
+          <Typography variant="h5">Flushing NY</Typography>
+          <Typography variant="h5">Flushing NY</Typography>
+          <Typography variant="h5">Flushing NY</Typography>
         </DStack>
       </EPaper>
     </DPaper>
   );
 };
 
-export default observer(LocationBox);
+export default observer(MenuBox);
