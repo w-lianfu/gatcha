@@ -3,14 +3,16 @@ import { useNavigate } from 'react-router';
 import { observer } from 'mobx-react-lite';
 import {
   Paper, Stack, Box, Button, Typography,
-  ImageList, ImageListItem, Modal, IconButton,
+  ImageList, ImageListItem,
 } from '@mui/material';
 import { styled } from '@mui/system';
-import { MdClose } from 'react-icons/md';
-import Viewer from 'viewerjs';
 
 import '@lib/viewer/viewer.scss';
 import Color from '@tool/color';
+import moGlobal, {
+  toggleImageModal, setImageUrl,
+} from '@store/global';
+import ImageModal from '@base/image-modal';
 
 interface IProps {}
 
@@ -19,30 +21,8 @@ const DPaper = styled(Paper)({
   padding: '3rem 5rem',
   boxSizing: 'border-box',
 });
-const DStack = styled(Stack)({
-  width: '100%',
-  height: '100%',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-
-  '& img': {
-    maxWidth: '90%',
-    maxHeight: '90%',
-  },
-});
 const DItem = styled(ImageListItem)({
   cursor: 'pointer',
-});
-const DModal = styled(Modal)({
-  backdropFilter: 'blur(6px)',
-  backgroundColor: Color.black(0.5),
-});
-const DIconButton = styled(IconButton)({
-  position: 'absolute',
-  top: '1rem',
-  right: '1rem',
-  fontSize: '4rem',
 });
 
 const imageData = [
@@ -113,27 +93,14 @@ const imageData = [
 
 const Gallery = (props: IProps) => {
   const navi = useNavigate();
-  const [isModal, setModal] = useState(false);
-  const [currentUrl, setCurrentUrl] = useState('');
 
   useEffect(() => {
     return () => {};
   }, []);
 
   const onImg = (key: number, currentUrl: string) => {
-    console.log('title -- ', currentUrl);
-    setCurrentUrl(currentUrl);
-    setModal(true);
-    // new Viewer(document.getElementById(`imageItem${key}`) as HTMLElement, {});
-  };
-
-  const onNothing = (ev: SyntheticEvent) => {
-    ev.stopPropagation();
-  };
-
-  const onClose = (ev: SyntheticEvent) => {
-    ev.stopPropagation();
-    setModal(false);
+    setImageUrl(currentUrl);
+    toggleImageModal(true);
   };
 
   return (
@@ -149,18 +116,7 @@ const Gallery = (props: IProps) => {
         ))}
       </ImageList>
 
-      <DModal open={isModal}>
-        <DStack onClick={() => setModal(false)}>
-          {currentUrl ? (
-            <img src={currentUrl} alt="hello"
-              onClick={(ev: SyntheticEvent) => onNothing(ev)}
-              className="animate__animated animate__zoomInDown" />
-          ) : null}
-          <DIconButton onClick={(ev: SyntheticEvent) => onClose(ev)}>
-            <MdClose color={Color.white(1)} />
-          </DIconButton>
-        </DStack>
-      </DModal>
+      <ImageModal />
     </DPaper>
   );
 };

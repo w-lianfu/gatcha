@@ -54,21 +54,24 @@ const Home = (props: IProps) => {
         <FPaper>
           <ItemBox />
           <DStack>
+            <NavLink to="/gallery">
+              <Button variant="contained" color="secondary">To Gallery</Button>
+            </NavLink>
+            <NavLink to="/tangram">
+              <Button variant="contained" color="success">To Flushing NY</Button>
+            </NavLink>
             <NavLink to="/parties-info">
               <Button variant="contained" color="primary">To Parties-Info</Button>
             </NavLink>
-            <Button variant="contained" color="secondary">Hello</Button>
-            <Button variant="contained" color="success">Hello</Button>
-            <Button variant="contained" color="info">Hello</Button>
-            <Typography>Number: {num}</Typography>
-            <Button variant="contained" color="warning"
-              onClick={() => numIncrease()}>Number Increase
-            </Button>
-            <Button variant="contained" color="error"
-              onClick={() => numDecrease()}>Number Decrease
-            </Button>
-            <Button variant="contained" color="black">Hello</Button>
-            <Button variant="contained" disabled>Hello</Button>
+            <NavLink to="/orlando-fl">
+              <Button variant="contained" color="info">To Orlando FL</Button>
+            </NavLink>
+            <NavLink to="/saugus-ma">
+              <Button variant="contained" color="secondary">To Saugus MA</Button>
+            </NavLink>
+            <NavLink to="/edison-nj">
+              <Button variant="contained" color="success">To Edison NJ</Button>
+            </NavLink>
           </DStack>
         </FPaper>
       </EPaper>

@@ -10,6 +10,7 @@ export default defineConfig({
     alias: {
       '@': './src',
       '@src': './src',
+      '@base': './src/base',
       '@comp': './src/component',
       '@con': './src/container',
       '@core': './src/core',
