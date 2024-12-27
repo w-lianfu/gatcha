@@ -5,13 +5,14 @@ import { Paper, Stack, Box, Button, Typography } from '@mui/material';
 import { styled } from '@mui/system';
 
 import Color from '@tool/color';
+import Size from '@tool/size';
 import moHeader, { toggleMenu } from '@store/header';
 
 interface IProps {}
 
 const DPaper = styled(Paper)({
   position: 'absolute',
-  top: '10rem',
+  top: `${Size.header}rem`,
   width: '100%',
   paddingTop: '3rem',
   display: 'flex',

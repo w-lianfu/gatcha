@@ -1,5 +1,5 @@
 const Size = {
-  header: 10,
+  header: 8,
   maxWidth: '1920px',
 };
 

@@ -82,11 +82,11 @@ const ImgSlick = (props: IProps) => {
   const slickSettings = {
     dots: true,
     infinite: true,
-    speed: 1000,
+    speed: 500,
     autoplaySpeed: 3000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // autoplay: true,
+    autoplay: true,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
     dotsClass: 'slick-dots custom-dots',

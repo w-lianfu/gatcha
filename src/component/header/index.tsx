@@ -3,7 +3,9 @@ import { useNavigate } from 'react-router';
 import { observer } from 'mobx-react-lite';
 import { Stack, Box, Button, Typography } from '@mui/material';
 import { styled } from '@mui/system';
-import { MdMenu, MdArrowDownward } from 'react-icons/md';
+import {
+  MdMenu, MdClose, MdArrowDownward, MdArrowUpward,
+} from 'react-icons/md';
 
 import Color from '@tool/color';
 import Size from '@tool/size';
@@ -59,11 +61,18 @@ const DButton = styled(Button)({
   '&.active': { backgroundColor: Color.black(0.25) },
 });
 const FButton = styled(Button)({
-  padding: '0 2rem',
+  width: '12rem',
+  padding: '0 1rem',
+  boxSizing: 'border-box',
   fontSize: '4rem',
+  backgroundColor: Color.secondary(0.2),
+
+  '&:hover': { backgroundColor: Color.secondary(0.2) },
+  '&.active': { backgroundColor: Color.secondary(0.3) },
 });
 const DTypography = styled(Typography)({
-  marginLeft: '0.3rem',
+  boxSizing: 'border-box',
+  marginLeft: '0.5rem',
   fontSize: '2rem',
 });
 
@@ -91,12 +100,14 @@ const Header = (props: IProps) => {
           <DButton color="info"
             onMouseEnter={() => hiddenBox(false, false)}>Studio
           </DButton>
-          <DButton color="info" endIcon={<MdArrowDownward />}
+          <DButton color="info"
+            endIcon={partiesShow ? <MdArrowUpward /> : <MdArrowDownward />}
             onMouseEnter={() => hiddenBox(true, false)}
             onMouseLeave={() => toggleParties(false)}
             className={[partiesShow ? 'active' : ''].join(',')}>Parties
           </DButton>
-          <DButton color="info" endIcon={<MdArrowDownward />}
+          <DButton color="info"
+            endIcon={locationShow ? <MdArrowUpward /> : <MdArrowDownward />}
             onMouseEnter={() => hiddenBox(false, true)}
             onMouseLeave={() => toggleLocation(false)}
             className={[locationShow ? 'active' : ''].join(',')}>Location/Pricing
@@ -104,8 +115,9 @@ const Header = (props: IProps) => {
         </DBox>
         <DBox onMouseEnter={() => toggleMenu(true)}
           onMouseLeave={() => toggleMenu(false)}>
-          <FButton color="secondary">
-            <MdMenu />
+          <FButton color="secondary"
+            className={[menuShow ? 'active' : ''].join(',')}>
+            {menuShow ? <MdClose size="30px" /> : <MdMenu size="30px" />}
             <DTypography variant="body1">Menu</DTypography>
           </FButton>
         </DBox>
