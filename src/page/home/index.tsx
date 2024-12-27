@@ -14,6 +14,7 @@ import Bottom from '@comp/bottom/index';
 import ImgSlick from './img-slick';
 import VideoBox from './video-box';
 import ItemBox from './item-box';
+import LinkAddress from './link-address';
 
 interface IProps {}
 
@@ -53,26 +54,7 @@ const Home = (props: IProps) => {
         <VideoBox />
         <FPaper>
           <ItemBox />
-          <DStack>
-            <NavLink to="/gallery">
-              <Button variant="contained" color="secondary">To Gallery</Button>
-            </NavLink>
-            <NavLink to="/tangram">
-              <Button variant="contained" color="success">To Flushing NY</Button>
-            </NavLink>
-            <NavLink to="/parties-info">
-              <Button variant="contained" color="primary">To Parties-Info</Button>
-            </NavLink>
-            <NavLink to="/orlando-fl">
-              <Button variant="contained" color="info">To Orlando FL</Button>
-            </NavLink>
-            <NavLink to="/saugus-ma">
-              <Button variant="contained" color="secondary">To Saugus MA</Button>
-            </NavLink>
-            <NavLink to="/edison-nj">
-              <Button variant="contained" color="success">To Edison NJ</Button>
-            </NavLink>
-          </DStack>
+          <LinkAddress />
         </FPaper>
       </EPaper>
       <Footer />
