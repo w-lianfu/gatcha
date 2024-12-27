@@ -3,6 +3,7 @@ import { HashRouter, Routes, Route } from 'react-router';
 import Home from '@page/home/index';
 import PartiesInfo from '@page/parties-info/index';
 import Gallery from '@page/gallery/index';
+import ViewerGallery from '@page/viewer-gallery/index';
 import Stores from '@page/stores/index';
 import Tangram from '@page/stores/tangram/index';
 import SaugusMa from '@page/stores/saugus-ma/index';
@@ -19,6 +20,7 @@ const AppRoute = (props: IProps) => {
         <Route path="/" element={<Home />} />
         <Route path="parties-info" element={<PartiesInfo />} />
         <Route path="gallery" element={<Gallery />} />
+        <Route path="viewer-gallery" element={<ViewerGallery />} />
         <Route path="stores" element={<Stores />}>
           <Route path="tangram" element={<Tangram />} />
           <Route path="saugus-ma" element={<SaugusMa />} />
