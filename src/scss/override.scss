@@ -16,6 +16,8 @@ a {
   color: $black;
 }
 
+div[aria-hidden="true"] { display: none; }
+
 // react-slick dots
 .custom-dots {
   height: 3rem;

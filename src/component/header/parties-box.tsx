@@ -40,6 +40,7 @@ const PartyBox = styled(Box)({
   marginLeft: '2rem',
   marginBottom: '3rem',
   // boxSizing: 'border-box',
+  cursor: 'pointer',
   color: Color.white(1),
   backgroundColor: Color.black(0.6),
 });
@@ -55,20 +56,20 @@ const PartiesBox = (props: IProps) => {
     <Parties onMouseEnter={() => toggleParties(true)}
       onMouseLeave={() => toggleParties(false)}>
       <ListBox>
-        <PartyBox>
+        <PartyBox onClick={() => navi('/parties-info')}>
           <Typography>About Parties</Typography>
         </PartyBox>
-        <PartyBox>
+        <PartyBox onClick={() => navi('/tangram')}>
           <Typography>Flushing</Typography>
         </PartyBox>
-        <PartyBox>
+        <PartyBox onClick={() => navi('/orlando-fl')}>
           <Typography>Orlando</Typography>
         </PartyBox>
-        <PartyBox>
+        <PartyBox onClick={() => navi('/saugus-ma')}>
           <Typography>Saugus</Typography>
         </PartyBox>
-        <PartyBox>
-          <Typography>Hello</Typography>
+        <PartyBox onClick={() => navi('/gallery')}>
+          <Typography>Gallery</Typography>
         </PartyBox>
       </ListBox>
     </Parties>
