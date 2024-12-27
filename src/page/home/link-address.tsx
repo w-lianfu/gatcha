@@ -30,19 +30,19 @@ const Tangram = (props: IProps) => {
       <NavLink to="/gallery">
         <DTypography variant="body1">To Gallery</DTypography>
       </NavLink>
-      <NavLink to="/tangram">
+      <NavLink to="/stores?storeName=tangram">
         <DTypography variant="body1">To Flushing NY</DTypography>
       </NavLink>
       <NavLink to="/parties-info">
         <DTypography variant="body1">To Parties-Info</DTypography>
       </NavLink>
-      <NavLink to="/orlando-fl">
+      <NavLink to="/stores?storeName=orlando-fl">
         <DTypography variant="body1">To Orlando FL</DTypography>
       </NavLink>
-      <NavLink to="/saugus-ma">
+      <NavLink to="/stores?storeName=saugus-ma">
         <DTypography variant="body1">To Saugus MA</DTypography>
       </NavLink>
-      <NavLink to="/edison-nj">
+      <NavLink to="/stores?storeName=edison-nj">
         <DTypography variant="body1">To Edison NJ</DTypography>
       </NavLink>
     </DStack>

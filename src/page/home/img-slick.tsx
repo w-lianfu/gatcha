@@ -107,25 +107,25 @@ const ImgSlick = (props: IProps) => {
   return (
     <SlickBox>
       <Slider {...slickSettings}>
-        <ImgBox1 onClick={() => navi('/tangram')}>
+        <ImgBox1 onClick={() => navi('/stores/tangram')}>
           <DBox>
             <Typography variant="h5">Flushing NY</Typography>
             <Typography variant="body1">Clawcade, Arcade, Cocktail Bar, Gatcha Shop</Typography>
           </DBox>
         </ImgBox1>
-        <ImgBox2 onClick={() => navi('/saugus-ma')}>
+        <ImgBox2 onClick={() => navi('/stores/saugus-ma')}>
           <DBox>
             <Typography variant="h5">Orlando FL</Typography>
             <Typography variant="body1">Clawcade, Arcade, Cocktail Bar, Gatcha Shop</Typography>
           </DBox>
         </ImgBox2>
-        <ImgBox3 onClick={() => navi('/orlando-fl')}>
+        <ImgBox3 onClick={() => navi('/stores/orlando-fl')}>
           <DBox>
             <Typography variant="h5">Saugus MA</Typography>
             <Typography variant="body1">Clawcade, Arcade, Cocktail Bar, Gatcha Shop</Typography>
           </DBox>
         </ImgBox3>
-        <ImgBox4 onClick={() => navi('/edison-nj')}>
+        <ImgBox4 onClick={() => navi('/stores/edison-nj')}>
           <DBox>
             <Typography variant="h5">Edison NJ</Typography>
             <Typography variant="body1">Clawcade, Arcade, Cocktail Bar, Gatcha Shop</Typography>

@@ -59,13 +59,13 @@ const PartiesBox = (props: IProps) => {
         <PartyBox onClick={() => navi('/parties-info')}>
           <Typography>About Parties</Typography>
         </PartyBox>
-        <PartyBox onClick={() => navi('/tangram')}>
+        <PartyBox onClick={() => navi('/stores/tangram')}>
           <Typography>Flushing</Typography>
         </PartyBox>
-        <PartyBox onClick={() => navi('/orlando-fl')}>
+        <PartyBox onClick={() => navi('/stores/orlando-fl')}>
           <Typography>Orlando</Typography>
         </PartyBox>
-        <PartyBox onClick={() => navi('/saugus-ma')}>
+        <PartyBox onClick={() => navi('/stores/saugus-ma')}>
           <Typography>Saugus</Typography>
         </PartyBox>
         <PartyBox onClick={() => navi('/gallery')}>
