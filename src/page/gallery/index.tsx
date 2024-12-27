@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, SyntheticEvent } from 'react';
 import { useNavigate } from 'react-router';
 import { observer } from 'mobx-react-lite';
 import {
@@ -127,6 +127,15 @@ const Gallery = (props: IProps) => {
     // new Viewer(document.getElementById(`imageItem${key}`) as HTMLElement, {});
   };
 
+  const onNothing = (ev: SyntheticEvent) => {
+    ev.stopPropagation();
+  };
+
+  const onClose = (ev: SyntheticEvent) => {
+    ev.stopPropagation();
+    setModal(false);
+  };
+
   return (
     <DPaper>
       <Typography variant="h1">Gallery Page</Typography>
@@ -141,9 +150,13 @@ const Gallery = (props: IProps) => {
       </ImageList>
 
       <DModal open={isModal}>
-        <DStack>
-          {currentUrl ? <img src={currentUrl} alt="hello" /> : null}
-          <DIconButton onClick={() => setModal(false)}>
+        <DStack onClick={() => setModal(false)}>
+          {currentUrl ? (
+            <img src={currentUrl} alt="hello"
+              onClick={(ev: SyntheticEvent) => onNothing(ev)}
+              className="animate__animated animate__zoomInDown" />
+          ) : null}
+          <DIconButton onClick={(ev: SyntheticEvent) => onClose(ev)}>
             <MdClose color={Color.white(1)} />
           </DIconButton>
         </DStack>
