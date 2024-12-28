@@ -13,13 +13,14 @@ const DStack = styled(Stack)({
   display: 'flex',
   flexDirection: 'column',
   width: '1200px',
-  padding: '2rem',
+  padding: '2rem 0 0 2rem',
   marginTop: '3rem',
   boxSizing: 'border-box',
   backgroundColor: Color.black(0.1),
 });
 const EStack = styled(Stack)({
   display: 'flex',
+  flexWrap: 'wrap',
   flexDirection: 'row',
   marginTop: '2rem',
 });
@@ -34,6 +35,7 @@ const Item = CStyled.section`
   align-items: center;
   justify-content: center;
   margin-right: 2rem;
+  margin-bottom: 2rem;
   box-sizing: border-box;
   cursor: pointer;
   border: 4px solid ${Color.black(0)};
