@@ -43,6 +43,18 @@ const Item = CStyled.section`
 
   &:hover { border: 4px solid ${Color.black(1)} }
 `;
+const ETypography = styled(Typography)({
+  display: 'inline-flex',
+  alignItems: 'center',
+
+  '& b': {
+    display: 'inline-flex',
+    width: '1.2rem',
+    height: '1.6rem',
+    boxSizing: 'border-box',
+    borderLeft: `4px solid ${Color.primary(1)}`,
+  },
+});
 
 const Tangram = (props: IProps) => {
   const navi = useNavigate();
@@ -53,24 +65,24 @@ const Tangram = (props: IProps) => {
 
   return (
     <DStack>
-      <Typography variant="h6">Available Link</Typography>
+      <ETypography variant="h6"><b />Available Link</ETypography>
       <EStack>
-        <Item onClick={() => navi('gallery')}>
+        <Item onClick={() => navi('/gallery')}>
           <DTypography variant="body1">To Gallery</DTypography>
         </Item>
-        <Item onClick={() => navi('stores?storeName=tangram')}>
+        <Item onClick={() => navi('/stores?storeName=tangram')}>
           <DTypography variant="body1">To Flushing NY</DTypography>
         </Item>
-        <Item onClick={() => navi('parties-info')}>
+        <Item onClick={() => navi('/parties-info')}>
           <DTypography variant="body1">To Parties-Info</DTypography>
         </Item>
-        <Item onClick={() => navi('stores?storeName=orlando-fl')}>
+        <Item onClick={() => navi('/stores?storeName=orlando-fl')}>
           <DTypography variant="body1">To Orlando FL</DTypography>
         </Item>
-        <Item onClick={() => navi('stores?storeName=saugus-ma')}>
+        <Item onClick={() => navi('/stores?storeName=saugus-ma')}>
           <DTypography variant="body1">To Saugus MA</DTypography>
         </Item>
-        <Item onClick={() => navi('stores?storeName=edison-nj')}>
+        <Item onClick={() => navi('/stores?storeName=edison-nj')}>
           <DTypography variant="body1">To Edison NJ</DTypography>
         </Item>
       </EStack>

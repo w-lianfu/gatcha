@@ -71,10 +71,18 @@ const MenuBox = (props: IProps) => {
       onMouseLeave={() => toggleMenu(false)}>
       <EPaper>
         <DStack>
-          <DButton variant="contained" color="secondary">Home</DButton>
-          <DButton variant="contained" color="secondary">Parties</DButton>
-          <DButton variant="contained" color="secondary">About</DButton>
-          <DButton variant="contained" color="secondary">Contact</DButton>
+          <DButton variant="contained" color="secondary"
+            onClick={() => navi('/')}>Home
+          </DButton>
+          <DButton variant="contained" color="secondary"
+            onClick={() => navi('/parties-info')}>Parties
+          </DButton>
+          <DButton variant="contained" color="secondary"
+            onClick={() => navi('/about')}>About
+          </DButton>
+          <DButton variant="contained" color="secondary"
+            onClick={() => navi('/contact')}>Contact
+          </DButton>
         </DStack>
 
         <EStack>

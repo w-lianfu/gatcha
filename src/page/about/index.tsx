@@ -11,7 +11,7 @@ interface IProps {}
 const DPaper = styled(Paper)({});
 const DStack = styled(Stack)({});
 
-const Tangram = (props: IProps) => {
+const About = (props: IProps) => {
   const navi = useNavigate();
 
   useEffect(() => {
@@ -20,10 +20,10 @@ const Tangram = (props: IProps) => {
 
   return (
     <DPaper>
-      <Typography variant="h1">Tangram Page</Typography>
+      <Typography variant="h1">About Page</Typography>
       <Button onClick={() => navi('/')}>to Home</Button>
     </DPaper>
   );
 };
 
-export default observer(Tangram);
+export default observer(About);

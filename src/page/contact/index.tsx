@@ -11,7 +11,7 @@ interface IProps {}
 const DPaper = styled(Paper)({});
 const DStack = styled(Stack)({});
 
-const OrlandoFL = (props: IProps) => {
+const Contact = (props: IProps) => {
   const navi = useNavigate();
 
   useEffect(() => {
@@ -20,10 +20,10 @@ const OrlandoFL = (props: IProps) => {
 
   return (
     <DPaper>
-      <Typography variant="h1">OrlandoFL Page</Typography>
+      <Typography variant="h1">Contact Page</Typography>
       <Button onClick={() => navi('/')}>to Home</Button>
     </DPaper>
   );
 };
 
-export default observer(OrlandoFL);
+export default observer(Contact);

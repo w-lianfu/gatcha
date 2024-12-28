@@ -122,16 +122,16 @@ const LocationBox = (props: IProps) => {
         <DStack>
           <TitleTypography variant="h5">Locations</TitleTypography>
           <CBox>
-            <DBox1 onClick={() => onStore('stores?storeName=tangram')}>
+            <DBox1 onClick={() => onStore('/stores?storeName=tangram')}>
               <DTypography variant="h6">Flushing NY</DTypography>
             </DBox1>
-            <DBox2 onClick={() => onStore('stores?storeName=saugus-ma')}>
+            <DBox2 onClick={() => onStore('/stores?storeName=saugus-ma')}>
               <DTypography variant="h6">Saugus MA</DTypography>
             </DBox2>
-            <DBox3 onClick={() => onStore('stores?storeName=orlando-fl')}>
+            <DBox3 onClick={() => onStore('/stores?storeName=orlando-fl')}>
               <DTypography variant="h6">Orlando FL</DTypography>
             </DBox3>
-            <DBox4 onClick={() => onStore('stores?storeName=edison-nj')}>
+            <DBox4 onClick={() => onStore('/stores?storeName=edison-nj')}>
               <DTypography variant="h6">Edison NJ</DTypography>
             </DBox4>
           </CBox>

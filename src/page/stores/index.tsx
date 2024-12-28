@@ -18,6 +18,13 @@ const Stores = (props: IProps) => {
   const storeName = params.get('storeName') || '';
 
   useEffect(() => {
+    // When enter this page, scroll to top page.
+    document.documentElement.scrollTo({
+      top: 0,
+      left: 0,
+      // behavior: 'smooth',
+    });
+
     return () => {};
   }, []);
 

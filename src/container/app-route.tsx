@@ -5,10 +5,8 @@ import PartiesInfo from '@page/parties-info/index';
 import Gallery from '@page/gallery/index';
 import ViewerGallery from '@page/viewer-gallery/index';
 import Stores from '@page/stores/index';
-import Tangram from '@page/stores/tangram/index';
-import SaugusMa from '@page/stores/saugus-ma/index';
-import OrlandoFL from '@page/stores/orlando-fl/index';
-import EdisonNJ from '@page/stores/edison-nj/index';
+import About from '@page/about/index';
+import Contact from '@page/contact/index';
 
 interface IProps {}
 
@@ -21,12 +19,9 @@ const AppRoute = (props: IProps) => {
         <Route path="parties-info" element={<PartiesInfo />} />
         <Route path="gallery" element={<Gallery />} />
         <Route path="viewer-gallery" element={<ViewerGallery />} />
-        <Route path="stores" element={<Stores />}>
-          <Route path="tangram" element={<Tangram />} />
-          <Route path="saugus-ma" element={<SaugusMa />} />
-          <Route path="orlando-fl" element={<OrlandoFL />} />
-          <Route path="edison-nj" element={<EdisonNJ />} />
-        </Route>
+        <Route path="stores" element={<Stores />} />
+        <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contact />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </HashRouter>
