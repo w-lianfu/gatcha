@@ -97,7 +97,7 @@ const Header = (props: IProps) => {
           <DButton color="info"
             onMouseEnter={() => hiddenBox(false, false)}>What&apos;s New
           </DButton>
-          <DButton color="info"
+          <DButton color="info" onClick={() => navi('/')}
             onMouseEnter={() => hiddenBox(false, false)}>Studio
           </DButton>
           <DButton color="info"

@@ -92,6 +92,11 @@ const PartiesBox = (props: IProps) => {
     return () => {};
   }, []);
 
+  const onStore = (link: string) => {
+    toggleParties(false);
+    navi(link);
+  };
+
   return (
     <Parties onMouseEnter={() => toggleParties(true)}
       onMouseLeave={() => toggleParties(false)}>
@@ -100,15 +105,15 @@ const PartiesBox = (props: IProps) => {
           <ImgItem1 />
           <Typography>About Parties</Typography>
         </PartyBox>
-        <PartyBox onClick={() => navi('/stores/tangram')}>
+        <PartyBox onClick={() => onStore('/stores?storeName=tangram')}>
           <ImgItem2 />
           <Typography>Flushing</Typography>
         </PartyBox>
-        <PartyBox onClick={() => navi('/stores/orlando-fl')}>
+        <PartyBox onClick={() => onStore('/stores?storeName=orlando-fl')}>
           <ImgItem3 />
           <Typography>Orlando</Typography>
         </PartyBox>
-        <PartyBox onClick={() => navi('/stores/saugus-ma')}>
+        <PartyBox onClick={() => onStore('/stores?storeName=saugus-ma')}>
           <ImgItem4 />
           <Typography>Saugus</Typography>
         </PartyBox>

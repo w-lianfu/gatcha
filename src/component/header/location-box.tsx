@@ -48,6 +48,7 @@ const DBox = styled(Box)({
   marginRight: '2rem',
   borderRadius: '0.8rem',
   overflow: 'hidden',
+  cursor: 'pointer',
 });
 const DBox1 = styled(DBox)({
   backgroundImage: 'url("https://cdn.prod.website-files.com/6657d5e13962708bf80347e8/66581c863def80e0515608ae_Orlando.jpg")',
@@ -101,6 +102,19 @@ const LocationBox = (props: IProps) => {
     return () => {};
   }, []);
 
+  const onStore = (link: string) => {
+    toggleLocation(false);
+    navi(link);
+  };
+  const onNY = () => {
+    toggleLocation(false);
+    window.open('https://cdn.prod.website-files.com/6657d5e13962708bf80347e8/66584864f4a67979f5fd9d2c_Game%20Credits.jpg');
+  };
+  const onOthers = () => {
+    toggleLocation(false);
+    window.open('https://cdn.prod.website-files.com/6657d5e13962708bf80347e8/66584931bcbbb63b28721cc7_Untitled%20design-2.jpg');
+  };
+
   return (
     <DPaper onMouseEnter={() => toggleLocation(true)}
       onMouseLeave={() => toggleLocation(false)}>
@@ -108,16 +122,16 @@ const LocationBox = (props: IProps) => {
         <DStack>
           <TitleTypography variant="h5">Locations</TitleTypography>
           <CBox>
-            <DBox1>
+            <DBox1 onClick={() => onStore('stores?storeName=tangram')}>
               <DTypography variant="h6">Flushing NY</DTypography>
             </DBox1>
-            <DBox2>
+            <DBox2 onClick={() => onStore('stores?storeName=saugus-ma')}>
               <DTypography variant="h6">Saugus MA</DTypography>
             </DBox2>
-            <DBox3>
+            <DBox3 onClick={() => onStore('stores?storeName=orlando-fl')}>
               <DTypography variant="h6">Orlando FL</DTypography>
             </DBox3>
-            <DBox4>
+            <DBox4 onClick={() => onStore('stores?storeName=edison-nj')}>
               <DTypography variant="h6">Edison NJ</DTypography>
             </DBox4>
           </CBox>
@@ -126,10 +140,10 @@ const LocationBox = (props: IProps) => {
         <DStack>
           <PriceTypography variant="h5">Pricing</PriceTypography>
           <CBox>
-            <PriceBox>
+            <PriceBox onClick={() => onNY()}>
               <DTypography variant="h6">NY</DTypography>
             </PriceBox>
-            <PriceBox>
+            <PriceBox onClick={() => onOthers()}>
               <DTypography variant="h6">All Locations</DTypography>
             </PriceBox>
           </CBox>
