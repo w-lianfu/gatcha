@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { observer } from 'mobx-react-lite';
-import { Paper, Stack, Box, Button, Typography } from '@mui/material';
+import { Stack, Box, Typography } from '@mui/material';
 import { styled } from '@mui/system';
+import StyledComp from 'styled-components';
 
 import Color from '@tool/color';
 import Size from '@tool/size';
@@ -33,9 +34,13 @@ const ListBox = styled(Stack)({
   boxSizing: 'border-box',
 });
 const PartyBox = styled(Box)({
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  alignItems: 'center',
   width: '30rem',
   height: '13rem',
-  padding: '1rem 2rem',
+  padding: '1rem',
   borderRadius: '1rem',
   marginLeft: '2rem',
   marginBottom: '3rem',
@@ -43,6 +48,41 @@ const PartyBox = styled(Box)({
   cursor: 'pointer',
   color: Color.white(1),
   backgroundColor: Color.black(0.6),
+});
+const ImgItem = StyledComp.div`
+  display: flex;
+  width: 26rem;
+  height: 8rem;
+`;
+const ImgItem1 = StyledComp(ImgItem)({
+  backgroundImage: 'url("https://cdn.prod.website-files.com/6657d5e13962708bf80347e8/66582118f11a8e5e14bf79c2_Untitled%20design.jpg")',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+});
+const ImgItem2 = StyledComp(ImgItem)({
+  backgroundImage: 'url("https://cdn.prod.website-files.com/6657d5e13962708bf80347e8/66581c863def80e0515608ae_Orlando.jpg")',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+});
+const ImgItem3 = StyledComp(ImgItem)({
+  backgroundImage: 'url("https://cdn.prod.website-files.com/6657d5e13962708bf80347e8/6658207d8355e838a231e3aa_IMG_7439_jpg-p-2000.jpg")',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+});
+const ImgItem4 = StyledComp(ImgItem)({
+  backgroundImage: 'url("https://cdn.prod.website-files.com/6657d5e13962708bf80347e8/66581fa1dc832b7744685466_Saugus-p-1600.jpg")',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+});
+const ImgItem5 = StyledComp(ImgItem)({
+  backgroundImage: 'url("https://cdn.prod.website-files.com/6657d5e13962708bf80347e8/6657fffebb76a1a4fddd248b_0914-3-2-p-1600.jpg")',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
 });
 
 const PartiesBox = (props: IProps) => {
@@ -57,18 +97,23 @@ const PartiesBox = (props: IProps) => {
       onMouseLeave={() => toggleParties(false)}>
       <ListBox>
         <PartyBox onClick={() => navi('/parties-info')}>
+          <ImgItem1 />
           <Typography>About Parties</Typography>
         </PartyBox>
         <PartyBox onClick={() => navi('/stores/tangram')}>
+          <ImgItem2 />
           <Typography>Flushing</Typography>
         </PartyBox>
         <PartyBox onClick={() => navi('/stores/orlando-fl')}>
+          <ImgItem3 />
           <Typography>Orlando</Typography>
         </PartyBox>
         <PartyBox onClick={() => navi('/stores/saugus-ma')}>
+          <ImgItem4 />
           <Typography>Saugus</Typography>
         </PartyBox>
         <PartyBox onClick={() => navi('/gallery')}>
+          <ImgItem5 />
           <Typography>Gallery</Typography>
         </PartyBox>
       </ListBox>

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router';
 import { observer } from 'mobx-react-lite';
 import { Paper, Stack, Box, Button, Typography } from '@mui/material';
 import { styled } from '@mui/system';
+import StyledComp from 'styled-components';
 
 import Color from '@tool/color';
 import Size from '@tool/size';
@@ -33,6 +34,65 @@ const EPaper = styled(Paper)({
   backgroundColor: Color.white(0),
 });
 const DStack = styled(Stack)({});
+const CBox = styled(Box)({
+  display: 'flex',
+  flexDirection: 'row',
+});
+const TitleTypography = styled(Typography)({
+  marginBottom: '1rem',
+});
+const DBox = styled(Box)({
+  display: 'flex',
+  width: '20rem',
+  height: '8rem',
+  marginRight: '2rem',
+  borderRadius: '0.8rem',
+  overflow: 'hidden',
+});
+const DBox1 = styled(DBox)({
+  backgroundImage: 'url("https://cdn.prod.website-files.com/6657d5e13962708bf80347e8/66581c863def80e0515608ae_Orlando.jpg")',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+});
+const DBox2 = styled(DBox)({
+  backgroundImage: 'url("https://cdn.prod.website-files.com/6657d5e13962708bf80347e8/6658207d8355e838a231e3aa_IMG_7439_jpg-p-2000.jpg")',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+});
+const DBox3 = styled(DBox)({
+  backgroundImage: 'url("https://cdn.prod.website-files.com/6657d5e13962708bf80347e8/66581fa1dc832b7744685466_Saugus-p-1600.jpg")',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+});
+const DBox4 = styled(DBox)({
+  backgroundImage: 'url("https://cdn.prod.website-files.com/6657d5e13962708bf80347e8/6657fffebb76a1a4fddd248b_0914-3-2-p-1600.jpg")',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+});
+const DTypography = styled(Typography)({
+  width: '100%',
+  height: '100%',
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  backdropFilter: 'blur(2px)',
+  color: Color.white(1),
+  backgroundColor: Color.black(0.6),
+});
+const PriceTypography = styled(Typography)({
+  marginTop: '3rem',
+  marginBottom: '1rem',
+});
+const PriceBox = styled(DBox)({
+  backgroundImage: 'url("https://cdn.prod.website-files.com/6657d5e13962708bf80347e8/6657fffebb76a1a4fddd248b_0914-3-2-p-1600.jpg")',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+});
 
 const LocationBox = (props: IProps) => {
   const navi = useNavigate();
@@ -46,13 +106,33 @@ const LocationBox = (props: IProps) => {
       onMouseLeave={() => toggleLocation(false)}>
       <EPaper>
         <DStack>
-          <Typography variant="h5">Locations</Typography>
-          <Typography variant="body1">Hello</Typography>
+          <TitleTypography variant="h5">Locations</TitleTypography>
+          <CBox>
+            <DBox1>
+              <DTypography variant="h6">Flushing NY</DTypography>
+            </DBox1>
+            <DBox2>
+              <DTypography variant="h6">Saugus MA</DTypography>
+            </DBox2>
+            <DBox3>
+              <DTypography variant="h6">Orlando FL</DTypography>
+            </DBox3>
+            <DBox4>
+              <DTypography variant="h6">Edison NJ</DTypography>
+            </DBox4>
+          </CBox>
         </DStack>
 
         <DStack>
-          <Typography variant="h5">Pricing</Typography>
-          <Typography variant="body1">Hello</Typography>
+          <PriceTypography variant="h5">Pricing</PriceTypography>
+          <CBox>
+            <PriceBox>
+              <DTypography variant="h6">NY</DTypography>
+            </PriceBox>
+            <PriceBox>
+              <DTypography variant="h6">All Locations</DTypography>
+            </PriceBox>
+          </CBox>
         </DStack>
       </EPaper>
     </DPaper>
