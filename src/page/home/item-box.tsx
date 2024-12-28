@@ -13,7 +13,6 @@ interface IProps {}
 const ItemSection = styled.div`
   position: relative;
   width: 1200px;
-  height: 500px;
   margin-top: 3rem;
   margin-bottom: 4rem;
 `;
@@ -91,6 +90,13 @@ const ImgBox3 = styled(ImgBox)({
 const ImgBox4 = styled(ImgBox)({
   backgroundImage: 'url("https://images.unsplash.com/photo-1498036882173-b41c28a8ba34?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
 });
+const DescTitle = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+`;
 
 const ItemBox = (props: IProps) => {
   const navi = useNavigate();
@@ -123,6 +129,10 @@ const ItemBox = (props: IProps) => {
 
   return (
     <ItemSection>
+      <DescTitle>
+        <Typography variant="h5">Locations</Typography>
+        <Typography variant="body1">Come see our current locations!</Typography>
+      </DescTitle>
       <Slider {...itemSettings}>
         <Item onMouseEnter={() => setHover1(true)} onMouseLeave={() => setHover1(false)}>
           <ImageItem>
