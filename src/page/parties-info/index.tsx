@@ -1,7 +1,10 @@
 import { useEffect } from 'react';
-import { NavLink } from 'react-router';
+import { useNavigate, NavLink } from 'react-router';
+import { observer } from 'mobx-react-lite';
 import { Paper, Stack, Button } from '@mui/material';
 import { styled } from '@mui/system';
+
+import Color from '@tool/color';
 
 interface IProps {}
 
@@ -9,6 +12,8 @@ const DPaper = styled(Paper)({});
 const DStack = styled(Stack)({});
 
 const PartiesInfo = (props: IProps) => {
+  const navi = useNavigate();
+
   useEffect(() => {
     return () => {};
   }, []);
@@ -47,4 +52,4 @@ const PartiesInfo = (props: IProps) => {
   );
 };
 
-export default PartiesInfo;
+export default observer(PartiesInfo);

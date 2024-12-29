@@ -36,11 +36,10 @@ const ImageItem = styled.div`
   padding: 2rem 5rem;
   box-sizing: border-box;
   border: 4px solid ${Color.black(0)};
-  background-color: ${Color.black(0.6)};
+  background-color: ${Color.black(0.5)};
 
   &:hover {
     border: 4px solid ${Color.black(1)};
-    background-color: ${Color.black(0.7)};
   }
 `;
 const Desc = styled.div`

@@ -4,10 +4,7 @@ import { Box, Typography } from '@mui/material';
 // import { styled } from '@mui/material/styles';
 import styled from 'styled-components';
 import Slider from 'react-slick';
-// import { MdArrowBackIosNew, MdArrowForwardIos } from 'react-icons/md';
 
-// import '@lib/react-slick/slick.scss';
-// import '@lib/react-slick/slick-theme.scss';
 import Color from '@tool/color';
 
 interface IProps {}

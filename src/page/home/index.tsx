@@ -4,10 +4,6 @@ import { observer } from 'mobx-react-lite';
 import { Paper, Stack, Button, Typography } from '@mui/material';
 import { styled } from '@mui/system';
 
-// import '@lib/react-slick/slick.scss';
-// import '@lib/react-slick/slick-theme.scss';
-import '@lib/react-slick/slick.css';
-import '@lib/react-slick/slick-theme.css';
 import Size from '@tool/size';
 import AppDial from '@con/app-dial';
 import Header from '@comp/header/index';
@@ -17,6 +13,7 @@ import ImgSlick from './img-slick';
 import VideoBox from './video-box';
 import ItemBox from './item-box';
 import LinkAddress from './link-address';
+import ItemList from './item-list';
 
 interface IProps {}
 
@@ -54,6 +51,7 @@ const Home = (props: IProps) => {
         <VideoBox />
         <FPaper>
           <ItemBox />
+          <ItemList />
           <LinkAddress />
         </FPaper>
       </EPaper>
